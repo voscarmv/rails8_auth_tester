@@ -30,7 +30,7 @@ const readLineAsync = () => {
                 headers: {
                     'Content-Type': 'application/json', // Set the content type
                 },
-                body: JSON.stringify({ username: usr, password: pass }) // Send the body as JSON
+                body: JSON.stringify({ email_address: usr, password: pass }) // Send the body as JSON
             });
             const output = await response.json();
             console.log(output);
