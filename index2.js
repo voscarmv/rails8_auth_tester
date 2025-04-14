@@ -17,12 +17,12 @@ const readLineAsync = () => {
 
 (
     async () => {
-        console.log('API URL?');
-        const url = await readLineAsync();
-        console.log('Username?');
-        const usr = await readLineAsync();
-        console.log('Password?');
-        const pass = await readLineAsync();
+        // console.log('API URL?');
+        const url = 'https://probable-space-memory-7rp4wxxq74fvj4-3000.app.github.dev/session';
+        // console.log('Username?');
+        const usr = 'user@test.com';
+        // console.log('Password?');
+        const pass = '123456789';
         let output = null;
         try {
             const response = await fetch(url, {
@@ -37,8 +37,8 @@ const readLineAsync = () => {
             console.error(e)
         }
         console.log(output);
-        console.log('API URL?');
-        const url2 = await readLineAsync();
+        // console.log('API URL?');
+        const url2 = 'https://probable-space-memory-7rp4wxxq74fvj4-3000.app.github.dev/projects';
         let output2;
         try {
           const response = await fetch(url2, {
