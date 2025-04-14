@@ -48,7 +48,7 @@ const readLineAsync = () => {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${output.data.token}`,
         },
-        body: JSON.stringify({ title: "New proj", description: `Bearer ${output.data.token}`}) // Send the body as JSON
+        body: JSON.stringify({ title: "New proj", description: `Bearer ${output.data.token}` }) // Send the body as JSON
       });
       output2 = await response.json();
       headers2 = response.headers;
@@ -117,6 +117,21 @@ const readLineAsync = () => {
     }
     console.log(output2);
     console.log(headers2.get('authorization'));
+    try {
+      const response = await fetch(url, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${headers2.get('authorization')}`,
+        },
+      });
+      // output2 = await response.json();
+      headers2 = response.headers;
+    } catch (e) {
+      console.error(e)
+    }
+    console.log(output2);
+    console.log(headers2.get('authorization'));
   }
-  
+
 )();

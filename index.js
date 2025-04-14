@@ -53,5 +53,6 @@ const readLineAsync = () => {
           console.error(e)
       }
       console.log(output2);
+      console.log(output2);
     }
 )();
