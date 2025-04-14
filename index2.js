@@ -43,10 +43,26 @@ const readLineAsync = () => {
     let headers2;
     try {
       const response = await fetch(url2, {
-        method: 'GET',
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${output.data.token}`,
+        },
+        body: JSON.stringify({ title: "New proj", description: `Bearer ${output.data.token}`}) // Send the body as JSON
+      });
+      output2 = await response.json();
+      headers2 = response.headers;
+    } catch (e) {
+      console.error(e)
+    }
+    console.log(output2);
+    console.log(headers2.get('authorization'));
+    try {
+      const response = await fetch(url2, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${headers2.get('authorization')}`,
         },
       });
       output2 = await response.json();
@@ -71,5 +87,36 @@ const readLineAsync = () => {
     }
     console.log(output2);
     console.log(headers2.get('authorization'));
+    try {
+      const response = await fetch(`${url2}/${output2[0].id}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${headers2.get('authorization')}`,
+        },
+      });
+      // output2 = await response.json();
+      headers2 = response.headers;
+    } catch (e) {
+      console.error(e)
+    }
+    console.log(output2);
+    console.log(headers2.get('authorization'));
+    try {
+      const response = await fetch(url2, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${headers2.get('authorization')}`,
+        },
+      });
+      output2 = await response.json();
+      headers2 = response.headers;
+    } catch (e) {
+      console.error(e)
+    }
+    console.log(output2);
+    console.log(headers2.get('authorization'));
   }
+  
 )();
