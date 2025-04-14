@@ -40,6 +40,7 @@ const readLineAsync = () => {
         // console.log('API URL?');
         const url2 = 'https://probable-space-memory-7rp4wxxq74fvj4-3000.app.github.dev/projects';
         let output2;
+        let headers2;
         try {
           const response = await fetch(url2, {
               method: 'GET',
@@ -49,9 +50,11 @@ const readLineAsync = () => {
               },
           });
           output2 = await response.json();
+          headers2 = response.headers;
       } catch(e) {
           console.error(e)
       }
       console.log(output2);
+      console.log(headers2.get('authorization'));
     }
 )();
