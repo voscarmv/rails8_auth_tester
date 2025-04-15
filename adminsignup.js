@@ -48,7 +48,7 @@ const readLineAsync = () => {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${output.data.token}`,
         },
-        body: JSON.stringify({ user: {email_address: "user3@example.com", password: 'holahola', role: 'user' }}) // Send the body as JSON
+        body: JSON.stringify({ user: {email_address: "user4@example.com", password: 'holahola' }}) // Send the body as JSON
       });
       output2 = await response.json();
       headers2 = response.headers;
