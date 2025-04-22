@@ -3,12 +3,23 @@ API calls to test [rails 8 auth](https://github.com/voscarmv/rails8_auth_api)
 
 ## Tests includad
 
-This list is itself incomplete
+Rails 8 Auth API has several functionalities that must be tested. Here's a checklist of the functionalities that are currently tested:
 
-- [x] Login
-- [x] Create project
-- [x] Read project
-- [x] Update project
-- [x] Delete project
-- [x] Create session
+- [ ] Sign-up: currently only Admin can create new users.
+- [x] Log-in
+- [x] Authenticated projects CRUD
+- [x] Change password: non-admin users can change their own password through a reset token sent to their emails.
+- [ ] Admin changes user email. Check what happens if the user is logged in while Admin does this.
+- [ ] Admin changes their own email. Check what happens to the session after this change is made.
+- [ ] Admin changes own password without reset token.
+- [ ] Admin changes user password without reset token.
+
+Make sure to generate every possible error response also from every controller file.
+
+- [ ] Errors from sessions controller
+    - [ ] Authentication fails
+    - [ ] etc...
+- [ ] Errors from users controller
 - [ ] ...
+
+TODO: Finish this list
