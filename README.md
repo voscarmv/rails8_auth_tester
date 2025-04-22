@@ -16,6 +16,9 @@ Rails 8 Auth API has several functionalities that must be tested. Here's a check
 
 Make sure to generate every possible error response also from every controller file.
 
+- [ ] Errors in Application Controller
+    - [ ] ActiveRecord::RecordNotFound
+    - [ ] ...
 - [ ] Errors from sessions controller
     - [ ] Authentication fails
     - [ ] etc...
