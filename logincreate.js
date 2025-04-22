@@ -88,14 +88,14 @@ const readLineAsync = () => {
     console.log(output2);
     console.log(headers2.get('authorization'));
     try {
-      const response = await fetch(`${url2}/${output2[0].id}`, {
+      const response = await fetch(`${url2}/${output2.data.projects[0].id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${headers2.get('authorization')}`,
         },
       });
-      // output2 = await response.json();
+      output2 = await response.json();
       headers2 = response.headers;
     } catch (e) {
       console.error(e)
